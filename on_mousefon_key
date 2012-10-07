@@ -1,0 +1,58 @@
+# when a key pressed on mousephone
+
+if [ -e /home/bin/on_mousefon_key ] ; then
+   /home/bin/on_mousefon_key
+   exit
+fi
+
+
+echo debug mousephon key  $1 and $2
+
+if [ "$1" = "777" ] ; then
+echo lid changes
+ case "$2" in
+ 1)
+   echo lid closed
+   ;;
+ 0)
+   echo lid opened
+   linphone-3&
+   ;;
+  esac
+fi
+
+if [ "$2" = "1" ] ; then 
+  echo key pressed code $1
+  case "$1" in
+  169)
+    echo power button
+    xdotool key F11
+    ;;
+  114)
+    echo up volume
+    #xdotool key Prior
+    xdotool key Down
+    ;;
+  115)
+    echo down volume
+    #xdotool key Next
+    xdotool key Up
+    ;;
+  353)   xdotool key Return ;;
+  129)   xdotool key Tab ;; 
+  253)   xdotool key Escape ;;
+  512)   xdotool key 0   ;;
+  513)   xdotool key 1   ;;
+  514)   xdotool key 2   ;;
+  515)   xdotool key 3   ;;
+  516)   xdotool key 4   ;;
+  517)   xdotool key 5   ;;
+  518)   xdotool key 6   ;;
+  519)   xdotool key 7   ;;
+  520)   xdotool key 8   ;;
+  521)   xdotool key 9   ;;
+  522)   xdotool key asterisk   ;;
+  523)   xdotool key '#'   ;;
+                
+  esac
+fi
