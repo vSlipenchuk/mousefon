@@ -51,6 +51,7 @@ int main (int npar,char **par) {
 
         if (ev.type == 1) on_key(ev.code,ev.value);
         if (ev.type == 5 && ev.code == 0 ) on_key(LIDKEY, ev.value);
+        if (ev.type == 22) break; // done mouse here???
 
         //if (ev.type == EV_PWR) break; //unplugged
 
